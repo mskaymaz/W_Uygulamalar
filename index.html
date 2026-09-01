@@ -131,21 +131,26 @@
       .lang-switcher {
         display: flex;
         justify-content: flex-end;
-        gap: 10px;
+        gap: 20px; /* Butonların araları açıldı */
         margin-bottom: 20px;
       }
       .lang-switcher button {
         background: #fff;
         border: 1px solid #ddd;
-        padding: 5px 10px;
-        border-radius: 6px;
+        padding: 8px 12px;
+        border-radius: 8px;
         cursor: pointer;
-        font-family: inherit;
-        font-weight: 600;
-        transition: all 0.2s;
+        font-size: 1.4rem; /* Emojiler büyütüldü */
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .lang-switcher button:hover {
-        background: #f0f0f0;
+        background: #f5f7fa;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        border-color: #ccc;
       }
     </style>
 </head>
@@ -154,9 +159,9 @@
 <div class="portfolio-container">
   
   <div class="lang-switcher">
-    <button onclick="setLang('tr')">🇹🇷 TR</button>
-    <button onclick="setLang('en')">🇬🇧 EN</button>
-    <button onclick="setLang('ar')">🇸🇦 AR</button>
+    <button onclick="setLang('tr')" title="Türkçe">🇹🇷</button>
+    <button onclick="setLang('en')" title="English">🇬🇧</button>
+    <button onclick="setLang('ar')" title="العربية">🇸🇦</button>
   </div>
 
   <div class="logo-container">
