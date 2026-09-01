@@ -137,15 +137,18 @@
       .lang-switcher button {
         background: #fff;
         border: 1px solid #ddd;
-        padding: 4px 10px; /* Önceki kibar dikey boyuta dönüldü */
+        padding: 4px 10px;
         border-radius: 6px;
         cursor: pointer;
-        font-size: 1.1rem; /* Eski zarif boyut */
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 1.05rem;
         transition: all 0.2s ease;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sağ alt gölge */
+        gap: 6px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
       }
       .lang-switcher button:hover {
         background: #f5f7fa;
@@ -160,9 +163,9 @@
 <div class="portfolio-container">
   
   <div class="lang-switcher">
-    <button onclick="setLang('tr')" title="Türkçe">🇹🇷</button>
-    <button onclick="setLang('en')" title="English">🇬🇧</button>
-    <button onclick="setLang('ar')" title="العربية">🇸🇦</button>
+    <button onclick="setLang('tr')" title="Türkçe">🇹🇷 TR</button>
+    <button onclick="setLang('en')" title="English">🇬🇧 EN</button>
+    <button onclick="setLang('ar')" title="العربية">🇸🇦 عرب</button>
   </div>
 
   <div class="logo-container">
