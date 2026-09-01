@@ -137,19 +137,20 @@
       .lang-switcher button {
         background: #fff;
         border: 1px solid #ddd;
-        padding: 8px 12px;
-        border-radius: 8px;
+        padding: 4px 10px; /* Önceki kibar dikey boyuta dönüldü */
+        border-radius: 6px;
         cursor: pointer;
-        font-size: 1.4rem; /* Emojiler büyütüldü */
+        font-size: 1.1rem; /* Eski zarif boyut */
         transition: all 0.2s ease;
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sağ alt gölge */
       }
       .lang-switcher button:hover {
         background: #f5f7fa;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        transform: translateY(-1px);
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.15); /* Hover'da gölge hafif artar */
         border-color: #ccc;
       }
     </style>
