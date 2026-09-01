@@ -31,18 +31,13 @@
       /* Logo Ayarları */
       .logo-container {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 60px;
       }
       
       .main-logo {
         max-width: 100%;
         width: 300px; /* 300px boyut */
         height: auto;
-      }
-
-      /* Logo Altı Boşluk */
-      .logo-divider {
-        margin: 40px auto;
       }
 
       /* Sayfa Ana Başlığı (Opsiyonel olarak eklenebilir) */
@@ -126,55 +121,132 @@
         line-height: 1.5;
         margin: 0;
       }
+      /* Çoklu Dil (Multi-language) Ayarları */
+      body.lang-tr .lang-en, body.lang-tr .lang-ar { display: none; }
+      body.lang-en .lang-tr, body.lang-en .lang-ar { display: none; }
+      body.lang-ar .lang-tr, body.lang-ar .lang-en { display: none; }
+      
+      body.lang-ar { direction: rtl; }
+      
+      .lang-switcher {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .lang-switcher button {
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 5px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: 600;
+        transition: all 0.2s;
+      }
+      .lang-switcher button:hover {
+        background: #f0f0f0;
+      }
     </style>
 </head>
-<body>
+<body class="lang-tr">
 
 <div class="portfolio-container">
+  
+  <div class="lang-switcher">
+    <button onclick="setLang('tr')">🇹🇷 TR</button>
+    <button onclick="setLang('en')">🇬🇧 EN</button>
+    <button onclick="setLang('ar')">🇸🇦 AR</button>
+  </div>
+
   <div class="logo-container">
     <img src="img/MSKLabsLogo1200.jpg" alt="MSK Labs" class="main-logo">
   </div>
   
-  <hr class="logo-divider">
-  
-  <h1 class="page-title">Uygulama Portföyü</h1>
+  <h1 class="page-title">
+    <span class="lang-tr">Uygulama Portföyü</span>
+    <span class="lang-en">Application Portfolio</span>
+    <span class="lang-ar">محفظة التطبيقات</span>
+  </h1>
   
   <!-- MOBİL ÇÖZÜMLER -->
-  <h2 class="category-title">Mobil Çözümler</h2>
+  <h2 class="category-title">
+    <span class="lang-tr">Mobil Çözümler</span>
+    <span class="lang-en">Mobile Solutions</span>
+    <span class="lang-ar">حلول الهاتف المحمول</span>
+  </h2>
   <div class="app-grid">
     <a href="http://msklabsdev.blogspot.com/p/haydinamaza.html" class="app-card">
       <div class="app-icon">🕌</div>
       <h3 class="app-name">HaydiNamaza</h3>
-      <p class="app-vision">Lokasyon bazlı ibadet planlaması ve zaman yönetimi otomasyonu.</p>
+      <p class="app-vision">
+        <span class="lang-tr">Lokasyon bazlı ibadet planlaması ve zaman yönetimi otomasyonu.</span>
+        <span class="lang-en">Location-based worship planning and time management automation.</span>
+        <span class="lang-ar">تخطيط العبادة القائم على الموقع وأتمتة إدارة الوقت.</span>
+      </p>
     </a>
     <a href="http://msklabsdev.blogspot.com/p/rekatsay.html" class="app-card">
       <div class="app-icon">📿</div>
       <h3 class="app-name">RekatSay</h3>
-      <p class="app-vision">Odaklanmayı artıran, minimalist ve etkileşimli takip aracı.</p>
+      <p class="app-vision">
+        <span class="lang-tr">Odaklanmayı artıran, minimalist ve etkileşimli takip aracı.</span>
+        <span class="lang-en">A minimalist and interactive tracking tool that increases focus.</span>
+        <span class="lang-ar">أداة تتبع تفاعلية وبسيطة تزيد من التركيز.</span>
+      </p>
     </a>
     <a href="http://msklabsdev.blogspot.com/p/en-yakin.html" class="app-card">
       <div class="app-icon">📍</div>
-      <h3 class="app-name">En Yakın</h3>
-      <p class="app-vision">Kritik hizmet noktalarını anında tespit eden lokasyon motoru.</p>
+      <h3 class="app-name">
+        <span class="lang-tr">En Yakın</span>
+        <span class="lang-en">Nearest</span>
+        <span class="lang-ar">الأقرب</span>
+      </h3>
+      <p class="app-vision">
+        <span class="lang-tr">Kritik hizmet noktalarını anında tespit eden lokasyon motoru.</span>
+        <span class="lang-en">Location engine that instantly detects critical service points.</span>
+        <span class="lang-ar">محرك الموقع الذي يكتشف نقاط الخدمة الحرجة على الفور.</span>
+      </p>
     </a>
   </div>
 
   <!-- MASAÜSTÜ SİSTEMLER -->
-  <h2 class="category-title">Masaüstü Sistemler</h2>
+  <h2 class="category-title">
+    <span class="lang-tr">Masaüstü Sistemler</span>
+    <span class="lang-en">Desktop Systems</span>
+    <span class="lang-ar">أنظمة سطح المكتب</span>
+  </h2>
   <div class="app-grid">
     <a href="http://msklabsdev.blogspot.com/p/deskpilot.html" class="app-card">
       <div class="app-icon">⚙️</div>
       <h3 class="app-name">DeskPilot</h3>
-      <p class="app-vision">Operasyonel hızı artıran, eklenti tabanlı modüler verimlilik asistanı.</p>
+      <p class="app-vision">
+        <span class="lang-tr">Operasyonel hızı artıran, eklenti tabanlı modüler verimlilik asistanı.</span>
+        <span class="lang-en">Plugin-based modular productivity assistant that increases operational speed.</span>
+        <span class="lang-ar">مساعد إنتاجية معياري قائم على المكونات الإضافية يزيد من سرعة التشغيل.</span>
+      </p>
     </a>
     <a href="http://msklabsdev.blogspot.com/p/gc-pil-uyari.html" class="app-card">
       <div class="app-icon">🔋</div>
-      <h3 class="app-name">GC Pil Uyarı</h3>
-      <p class="app-vision">Donanım sağlığını koruyan arka plan izleme ve bildirim servisi.</p>
+      <h3 class="app-name">
+        <span class="lang-tr">GC Pil Uyarı</span>
+        <span class="lang-en">GC Battery Alert</span>
+        <span class="lang-ar">تنبيه بطارية GC</span>
+      </h3>
+      <p class="app-vision">
+        <span class="lang-tr">Donanım sağlığını koruyan arka plan izleme ve bildirim servisi.</span>
+        <span class="lang-en">Background monitoring and notification service protecting hardware health.</span>
+        <span class="lang-ar">خدمة المراقبة والإشعارات الخلفية التي تحمي صحة الأجهزة.</span>
+      </p>
     </a>
   </div>
 
 </div>
+
+<script>
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+  }
+</script>
 
 </body>
 </html>
