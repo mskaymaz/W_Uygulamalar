@@ -219,11 +219,102 @@
           font-size: 0.9rem;
         }
       }
+
+      /* Reklam Alanları Genel Stilleri */
+      .layout-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 25px;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .desktop-ad {
+        width: 160px;
+        margin-top: 60px;
+        position: sticky;
+        top: 20px;
+        flex-shrink: 0;
+      }
+
+      .ad-placeholder {
+        background: #f4f5f7;
+        border: 1px dashed #cccccc;
+        border-radius: 8px;
+        color: #888888;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .desktop-ad .ad-placeholder {
+        height: 600px;
+      }
+
+      .infeed-ad-container {
+        margin: 45px 0 25px 0;
+        width: 100%;
+      }
+
+      .infeed-ad-container .ad-placeholder {
+        height: 120px;
+      }
+
+      .sticky-bottom-ad {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+        z-index: 1000;
+        padding: 8px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .sticky-bottom-ad .ad-placeholder {
+        width: 320px;
+        height: 50px;
+      }
+
+      /* Responsive Reklam Gizleme / Gösterme */
+      @media (max-width: 1280px) {
+        .desktop-ad {
+          display: none; /* Genişlik 1280px altına düşünce yan reklamlar gizlenir */
+        }
+      }
+
+      @media (max-width: 600px) {
+        .sticky-bottom-ad {
+          display: flex; /* Mobilde sabit alt bant reklam aktif olur */
+        }
+        .portfolio-container {
+          padding-bottom: 80px; /* Alt reklamın içeriği kapatmaması için boşluk */
+        }
+        .infeed-ad-container .ad-placeholder {
+          height: 100px;
+        }
+      }
     </style>
 </head>
 <body class="lang-tr">
 
-<div class="portfolio-container">
+<div class="layout-wrapper">
+
+  <!-- Masaüstü Sol Reklam (1280px üzerinde görünür) -->
+  <aside class="desktop-ad desktop-ad-left">
+    <div class="ad-placeholder">Masaüstü Sol Reklam<br>(160x600)</div>
+  </aside>
+
+  <!-- Ana İçerik Portföy Alanı -->
+  <div class="portfolio-container">
   
   <div class="lang-switcher">
     <button onclick="setLang('tr')" title="Türkçe">TR</button>
@@ -281,6 +372,11 @@
     </a>
   </div>
 
+  <!-- KATEGORİLER ARASI IN-FEED REKLAM ALANI -->
+  <div class="infeed-ad-container">
+    <div class="ad-placeholder">Kategoriler Arası Reklam Alanı (In-Feed Banner)</div>
+  </div>
+
   <!-- MASAÜSTÜ SİSTEMLER -->
   <h2 class="category-title">
     <span class="lang-tr">Masaüstü Sistemler</span>
@@ -312,6 +408,18 @@
     </a>
   </div>
 
+ </div> <!-- .portfolio-container Bitişi -->
+
+  <!-- Masaüstü Sağ Reklam (1280px üzerinde görünür) -->
+  <aside class="desktop-ad desktop-ad-right">
+    <div class="ad-placeholder">Masaüstü Sağ Reklam<br>(160x600)</div>
+  </aside>
+
+</div> <!-- .layout-wrapper Bitişi -->
+
+<!-- Mobil Sabit Alt Reklam (600px altında görünür) -->
+<div class="sticky-bottom-ad">
+  <div class="ad-placeholder">Mobil Sabit Alt Reklam (320x50)</div>
 </div>
 
 <script>
