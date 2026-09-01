@@ -265,25 +265,6 @@
         height: 120px;
       }
 
-      .sticky-bottom-ad {
-        display: none;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #ffffff;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
-        z-index: 1000;
-        padding: 8px;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .sticky-bottom-ad .ad-placeholder {
-        width: 320px;
-        height: 50px;
-      }
-
       /* Responsive Reklam Gizleme / Gösterme */
       @media (max-width: 1280px) {
         .desktop-ad {
@@ -292,12 +273,6 @@
       }
 
       @media (max-width: 600px) {
-        .sticky-bottom-ad {
-          display: flex; /* Mobilde sabit alt bant reklam aktif olur */
-        }
-        .portfolio-container {
-          padding-bottom: 80px; /* Alt reklamın içeriği kapatmaması için boşluk */
-        }
         .infeed-ad-container .ad-placeholder {
           height: 100px;
         }
@@ -372,6 +347,11 @@
     </a>
   </div>
 
+  <!-- KATEGORİLER ARASI REKLAM ALANI -->
+  <div class="infeed-ad-container">
+    <div class="ad-placeholder">Kategoriler Arası Reklam Alanı (In-Feed Banner)</div>
+  </div>
+
   <!-- MASAÜSTÜ SİSTEMLER -->
   <h2 class="category-title">
     <span class="lang-tr">Masaüstü Sistemler</span>
@@ -416,11 +396,6 @@
   </aside>
 
 </div> <!-- .layout-wrapper Bitişi -->
-
-<!-- Mobil Sabit Alt Reklam (600px altında görünür) -->
-<div class="sticky-bottom-ad">
-  <div class="ad-placeholder">Mobil Sabit Alt Reklam (320x50)</div>
-</div>
 
 <script>
   function setLang(lang) {
