@@ -432,6 +432,28 @@
 </div> <!-- .layout-wrapper Bitişi -->
 
 <script>
+  // MERKEZİ SİTE KONFİGÜRASYONU (Blogger & HTML Uyumlu)
+  var SITE_CONFIG = {
+    contactEmail: "msklabs.org@gmail.com"
+  };
+
+  // E-posta adreslerini ve mailto bağlantılarını merkezi konfigürasyondan doldurur
+  function syncCentralConfig() {
+    var email = (window.SITE_CONFIG && window.SITE_CONFIG.contactEmail) ? window.SITE_CONFIG.contactEmail : "msklabs.org@gmail.com";
+    
+    // Metin etiketlerini güncelle
+    document.querySelectorAll('.contact-email-text').forEach(function(el) {
+      el.textContent = email;
+    });
+
+    // Mailto bağlantılarını güncelle
+    document.querySelectorAll('a.contact-email-link').forEach(function(a) {
+      var subject = a.getAttribute('data-subject') || 'Talep';
+      var body = a.getAttribute('data-body') || '';
+      a.setAttribute('href', 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body));
+    });
+  }
+
   function setLang(lang) {
     if (!lang) lang = 'tr';
     try {
@@ -461,8 +483,10 @@
     });
   }
 
-  // Sayfa Yüklenme Anında Dil Belirleme (URL -> LocalStorage -> Varsayılan)
+  // Sayfa Yüklenme Anında Çalışacak Ana Blok
   (function() {
+    syncCentralConfig();
+
     var urlParams = new URLSearchParams(window.location.search);
     var langParam = urlParams.get('lang');
     var savedLang = null;
