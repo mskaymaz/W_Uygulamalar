@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/global.css?v=5">
+    <link rel="stylesheet" href="assets/css/global.css?v=6">
     
     <style>
       /* Üst Navigasyon (Geri Dön & Dil) */
@@ -226,6 +226,11 @@
             <span class="badge badge-platform">📱 Mobil Çözüm</span>
             <span class="badge badge-status">🛠️ Geliştirme Devam Ediyor</span>
           </div>
+          <a href="#download-section" class="hero-download-btn">
+            <span class="lang-tr">🚀 Uygulamayı Edin / İndir</span>
+            <span class="lang-en">🚀 Get App / Download</span>
+            <span class="lang-ar">🚀 الحصول على التطبيق / تنزيل</span>
+          </a>
         </div>
 
         <!-- Sağ Taraf: Global Dil Durumu & Laboratuvar Talep Butonları -->
@@ -300,12 +305,72 @@
         </div>
       </div>
 
-      <div class="action-btn-container">
-        <div class="status-btn">
-          <span>🛠️</span>
-          <span class="lang-tr">Çalışma Devam Etmektedir (Yakında Yayında)</span>
-          <span class="lang-en">Development in Progress (Coming Soon)</span>
-          <span class="lang-ar">العمل قيد التطوير (قريباً)</span>
+      <!-- İndirme ve Yayın Kanalları Alanı -->
+      <div id="download-section" class="download-section">
+        <div class="download-section-title">
+          <span class="lang-tr">📥 İndirme Seçenekleri ve Yayın Kanalları</span>
+          <span class="lang-en">📥 Download Options & Release Channels</span>
+          <span class="lang-ar">📥 خيارات التنزيل وقنوات الإصدار</span>
+        </div>
+
+        <div class="download-grid">
+          <!-- Google Play Store (Pasif) -->
+          <div class="download-card disabled">
+            <div class="download-card-header">
+              <div class="download-card-icon">🤖</div>
+              <div class="download-card-title">Google Play</div>
+            </div>
+            <div class="download-card-status">
+              <span class="lang-tr">Yakında Kullanılabilir Olacaksınız</span>
+              <span class="lang-en">Will be available soon</span>
+              <span class="lang-ar">ستكون متاحة قريباً</span>
+            </div>
+            <span class="download-tag tag-soon">
+              <span class="lang-tr">🛠️ Hazırlanıyor</span>
+              <span class="lang-en">🛠️ In Progress</span>
+              <span class="lang-ar">🛠️ قيد التحضير</span>
+            </span>
+          </div>
+
+          <!-- GitHub Releases -->
+          <a href="https://github.com/mskaymaz/W_Uygulamalar" target="_blank" rel="noopener" class="download-card">
+            <div class="download-card-header">
+              <div class="download-card-icon">🐙</div>
+              <div class="download-card-title">GitHub Releases</div>
+            </div>
+            <div class="download-card-status">
+              <span class="lang-tr">Açık Kaynak & Sürümler</span>
+              <span class="lang-en">Open Source & Releases</span>
+              <span class="lang-ar">المصدر المفتوح والإصدارات</span>
+            </div>
+            <span class="download-tag tag-active">
+              <span class="lang-tr">🌐 Depoyu İncele</span>
+              <span class="lang-en">🌐 View Repo</span>
+              <span class="lang-ar">🌐 عرض المستودع</span>
+            </span>
+          </a>
+
+          <!-- Doğrudan Yükleme APK (Pasif) -->
+          <div class="download-card disabled">
+            <div class="download-card-header">
+              <div class="download-card-icon">📦</div>
+              <div class="download-card-title">
+                <span class="lang-tr">Doğrudan APK İndir</span>
+                <span class="lang-en">Direct APK Download</span>
+                <span class="lang-ar">تنزيل ملف APK المباشر</span>
+              </div>
+            </div>
+            <div class="download-card-status">
+              <span class="lang-tr">Yakında Kullanılabilir Olacaksınız</span>
+              <span class="lang-en">Will be available soon</span>
+              <span class="lang-ar">ستكون متاحة قريباً</span>
+            </div>
+            <span class="download-tag tag-soon">
+              <span class="lang-tr">🛠️ Hazırlanıyor</span>
+              <span class="lang-en">🛠️ In Progress</span>
+              <span class="lang-ar">🛠️ قيد التحضير</span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
