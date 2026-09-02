@@ -92,28 +92,52 @@ body {
 
 /* İkon ve Metin Stilleri */
 .app-icon {
-  width: 48px;
-  height: 48px;
+  width: 96px;
+  height: 96px;
   background-color: #f5f7fa;
-  border-radius: 10px;
-  margin-bottom: 16px;
+  border-radius: 18px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  transition: background-color 0.3s ease;
+  font-size: 52px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
 .app-icon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 18px;
 }
 
 .app-card:hover .app-icon {
   background-color: #eef2f6;
+  transform: scale(1.03);
+}
+
+/* Detay Sayfası Büyük İkon Stili (2 Katı Büyüklük) */
+.app-big-icon {
+  width: 160px;
+  height: 160px;
+  background-color: #f5f7fa;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 84px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(0,0,0,0.05);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.app-big-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
 }
 
 .app-name {
@@ -414,11 +438,26 @@ body.lang-ar { direction: rtl; }
   }
 
   .app-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-    margin-bottom: 10px;
-    border-radius: 8px;
+    width: 64px;
+    height: 64px;
+    font-size: 36px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+  }
+
+  .app-icon img {
+    border-radius: 14px;
+  }
+
+  .app-big-icon {
+    width: 100px;
+    height: 100px;
+    font-size: 54px;
+    border-radius: 20px;
+  }
+
+  .app-big-icon img {
+    border-radius: 20px;
   }
 
   .app-name {
