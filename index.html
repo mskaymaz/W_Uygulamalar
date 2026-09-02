@@ -301,9 +301,9 @@
   <div class="portfolio-container">
   
   <div class="lang-switcher">
-    <button onclick="setLang('tr')" title="Türkçe">TR</button>
-    <button onclick="setLang('en')" title="English">EN</button>
-    <button onclick="setLang('ar')" title="العربية">عرب</button>
+    <button onclick="setLang('tr')" data-lang="tr" title="Türkçe">TR</button>
+    <button onclick="setLang('en')" data-lang="en" title="English">EN</button>
+    <button onclick="setLang('ar')" data-lang="ar" title="العربية">عرب</button>
   </div>
 
   <div class="logo-container">
@@ -331,6 +331,11 @@
         <span class="lang-en">Location-based worship planning and time management automation.</span>
         <span class="lang-ar">تخطيط العبادة القائم على الموقع وأتمتة إدارة الوقت.</span>
       </p>
+      <div class="lang-badges">
+        <span class="lang-badge active">🇹🇷 TR</span>
+        <span class="lang-badge pending" title="Yakında / Coming Soon">🇬🇧 EN</span>
+        <span class="lang-badge pending" title="Yakında / Coming Soon">🇸🇦 AR</span>
+      </div>
     </a>
     <a href="rekatsay.html" class="app-card">
       <div class="app-icon">📿</div>
@@ -340,6 +345,11 @@
         <span class="lang-en">A minimalist and interactive tracking tool that increases focus.</span>
         <span class="lang-ar">أداة تتبع تفاعلية وبسيطة تزيد من التركيز.</span>
       </p>
+      <div class="lang-badges">
+        <span class="lang-badge active">🇹🇷 TR</span>
+        <span class="lang-badge pending" title="Yakında / Coming Soon">🇬🇧 EN</span>
+        <span class="lang-badge pending" title="Yakında / Coming Soon">🇸🇦 AR</span>
+      </div>
     </a>
     <a href="enyakin.html" class="app-card">
       <div class="app-icon">📍</div>
@@ -353,6 +363,11 @@
         <span class="lang-en">Location engine that instantly detects critical service points.</span>
         <span class="lang-ar">محرك الموقع الذي يكتشف نقاط الخدمة الحرجة على الفور.</span>
       </p>
+      <div class="lang-badges">
+        <span class="lang-badge active">🇹🇷 TR</span>
+        <span class="lang-badge pending" title="Yakında / Coming Soon">🇬🇧 EN</span>
+        <span class="lang-badge pending" title="Yakında / Coming Soon">🇸🇦 AR</span>
+      </div>
     </a>
   </div>
 
@@ -376,6 +391,11 @@
         <span class="lang-en">Plugin-based modular productivity assistant that increases operational speed.</span>
         <span class="lang-ar">مساعد إنتاجية معياري قائم على المكونات الإضافية يزيد من سرعة التشغيل.</span>
       </p>
+      <div class="lang-badges">
+        <span class="lang-badge active">🇹🇷 TR</span>
+        <span class="lang-badge pending" title="Yakında / Coming Soon">🇬🇧 EN</span>
+        <span class="lang-badge pending" title="Yakında / Coming Soon">🇸🇦 AR</span>
+      </div>
     </a>
     <a href="gcpiluyari.html" class="app-card">
       <div class="app-icon">🔋</div>
@@ -389,6 +409,11 @@
         <span class="lang-en">Background monitoring and notification service protecting hardware health.</span>
         <span class="lang-ar">خدمة المراقبة والإشعارات الخلفية التي تحمي صحة الأجهزة.</span>
       </p>
+      <div class="lang-badges">
+        <span class="lang-badge active">🇹🇷 TR</span>
+        <span class="lang-badge pending" title="Yakında / Coming Soon">🇬🇧 EN</span>
+        <span class="lang-badge pending" title="Yakında / Coming Soon">🇸🇦 AR</span>
+      </div>
     </a>
   </div>
 
@@ -408,8 +433,46 @@
 
 <script>
   function setLang(lang) {
+    if (!lang) lang = 'tr';
+    try {
+      localStorage.setItem('user_lang', lang);
+    } catch(e) {}
+    
     document.body.className = 'lang-' + lang;
+    
+    // Aktif Dil Butonu Vurgulama (Dişi Renk)
+    var buttons = document.querySelectorAll('.lang-switcher button');
+    buttons.forEach(function(btn) {
+      if (btn.getAttribute('data-lang') === lang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // Bağlantılara ?lang= Parametresi Ekleme (Hafıza Kalıcılığı)
+    var links = document.querySelectorAll('a.app-card, a.back-btn');
+    links.forEach(function(a) {
+      var href = a.getAttribute('href');
+      if (href) {
+        var base = href.split('?')[0];
+        a.setAttribute('href', base + '?lang=' + lang);
+      }
+    });
   }
+
+  // Sayfa Yüklenme Anında Dil Belirleme (URL -> LocalStorage -> Varsayılan)
+  (function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var langParam = urlParams.get('lang');
+    var savedLang = null;
+    try {
+      savedLang = localStorage.getItem('user_lang');
+    } catch(e) {}
+    
+    var activeLang = langParam || savedLang || 'tr';
+    setLang(activeLang);
+  })();
 </script>
 
 </body>
