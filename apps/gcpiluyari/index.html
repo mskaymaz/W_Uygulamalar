@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RekatSay - Uygulama Detayı</title>
-    <meta name="description" content="RekatSay - Odaklanmayı artıran, minimalist ve etkileşimli takip aracı.">
+    <title>GC Pil Uyarı - Uygulama Detayı</title>
+    <meta name="description" content="GC Pil Uyarı - Donanım sağlığını koruyan arka plan izleme ve bildirim servisi.">
     
     <!-- Google Fonts: Inter & Global Stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
     
     <style>
       /* Üst Navigasyon */
@@ -111,8 +111,8 @@
       }
 
       .badge-platform {
-        background: #eef2ff;
-        color: #4f46e5;
+        background: #ecfdf5;
+        color: #047857;
       }
 
       .badge-status {
@@ -183,7 +183,6 @@
       }
 
       @media (max-width: 600px) {
-        .portfolio-container { padding: 20px 12px 40px 12px; }
         .detail-card { padding: 24px 16px; }
         .app-header { gap: 16px; }
         .app-big-icon { width: 60px; height: 60px; font-size: 32px; border-radius: 14px; }
@@ -207,7 +206,7 @@
     
     <!-- Üst Bar: Geri Dönüş ve Dil Seçici -->
     <div class="top-nav">
-      <a href="index.html" class="back-btn">
+      <a href="../../index.html" class="back-btn">
         <span class="lang-tr">← Portföye Dön</span>
         <span class="lang-en">← Back to Portfolio</span>
         <span class="lang-ar">العودة إلى المحفظة ←</span>
@@ -223,20 +222,24 @@
     <!-- Uygulama Kartı -->
     <div class="detail-card">
       <div class="app-header">
-        <div class="app-big-icon">📿</div>
+        <div class="app-big-icon">🔋</div>
         <div class="app-title-group">
-          <h1>RekatSay</h1>
+          <h1>
+            <span class="lang-tr">GC Pil Uyarı</span>
+            <span class="lang-en">GC Battery Alert</span>
+            <span class="lang-ar">تنبيه بطارية GC</span>
+          </h1>
           <div class="badges">
-            <span class="badge badge-platform">📱 Mobil Çözüm</span>
+            <span class="badge badge-platform">💻 Masaüstü Sistem</span>
             <span class="badge badge-status">🛠️ Geliştirme Devam Ediyor</span>
           </div>
         </div>
       </div>
 
       <div class="app-description">
-        <span class="lang-tr">Odaklanmayı artıran, minimalist ve etkileşimli takip aracı. İbadet sırasında zihinsel dağınıklığı önleyen akıllı sayaç mekanizması.</span>
-        <span class="lang-en">A minimalist and interactive tracking tool that increases focus. Smart counter mechanism that prevents mental distraction during worship.</span>
-        <span class="lang-ar">أداة تتبع تفاعلية وبسيطة تزيد من التركيز. آلية عداد ذكية تمنع التشتت الذهني أثناء العبادة.</span>
+        <span class="lang-tr">Donanım sağlığını koruyan arka plan izleme ve bildirim servisi. Dizüstü bilgisayarınızın pil ömrünü uzatmak için şarj seviyelerini akıllıca takip eder.</span>
+        <span class="lang-en">Background monitoring and notification service protecting hardware health. Intelligently tracks battery levels to extend your laptop's battery lifespan.</span>
+        <span class="lang-ar">خدمة المراقبة والإشعارات الخلفية التي تحمي صحة الأجهزة. تتبع مستويات البطارية بذكاء لتطيل عمر بطارية الكمبيوتر المحمول.</span>
       </div>
 
       <div class="features-title">
@@ -247,41 +250,41 @@
 
       <div class="features-grid">
         <div class="feature-box">
-          <h4>📿 
-            <span class="lang-tr">Minimalist Sayaç</span>
-            <span class="lang-en">Minimalist Counter</span>
-            <span class="lang-ar">عداد بسيط</span>
+          <h4>🔋 
+            <span class="lang-tr">Pil Sağlığı Koruması</span>
+            <span class="lang-en">Battery Health Protection</span>
+            <span class="lang-ar">حماية صحة البطارية</span>
           </h4>
           <p>
-            <span class="lang-tr">Gözü yormayan, sade ve odaklanmayı kolaylaştıran arayüz.</span>
-            <span class="lang-en">Clean interface that easy on the eyes and facilitates focus.</span>
-            <span class="lang-ar">واجهة مريحة للعين وبسيطة تسهل التركيز.</span>
+            <span class="lang-tr">Aşırı şarj ve derin deşarjı önleyen eşik değer bildirimleri.</span>
+            <span class="lang-en">Threshold notifications preventing overcharge and deep discharge.</span>
+            <span class="lang-ar">إشعارات حدية تمنع الشحن الزائد والتفريغ العميق.</span>
           </p>
         </div>
 
         <div class="feature-box">
-          <h4>🖐️ 
-            <span class="lang-tr">Temassız Takip</span>
-            <span class="lang-en">Touchless Tracking</span>
-            <span class="lang-ar">تتبع بدون لمس</span>
+          <h4>⚙️ 
+            <span class="lang-tr">Sessiz Arka Plan Servisi</span>
+            <span class="lang-en">Silent Background Service</span>
+            <span class="lang-ar">خدمة خلفية صامتة</span>
           </h4>
           <p>
-            <span class="lang-tr">Sensör destekli otomatik rekat ve adım tespiti.</span>
-            <span class="lang-en">Sensor-assisted automatic rakat and step detection.</span>
-            <span class="lang-ar">كشف تلقائي للركعات والخطوات بمساعدة المستشعرات.</span>
+            <span class="lang-tr">Sistem tepsisinde (System Tray) kaynak tüketmeden çalışır.</span>
+            <span class="lang-en">Runs in the System Tray with zero resource consumption.</span>
+            <span class="lang-ar">يعمل في صينية النظام دون استهلاك الموارد.</span>
           </p>
         </div>
 
         <div class="feature-box">
-          <h4>🔒 
-            <span class="lang-tr">Gizlilik Odaklı</span>
-            <span class="lang-en">Privacy Focused</span>
-            <span class="lang-ar">تركيز على الخصوصية</span>
+          <h4>🔊 
+            <span class="lang-tr">Özelleştirilebilir Sesler</span>
+            <span class="lang-en">Customizable Audio</span>
+            <span class="lang-ar">أصوات قابلة للتخصيص</span>
           </h4>
           <p>
-            <span class="lang-tr">Hiçbir kişisel veri toplamayan, %100 çevrimdışı çalışma.</span>
-            <span class="lang-en">100% offline operation without collecting any personal data.</span>
-            <span class="lang-ar">تشغيل 100% دون اتصال دون جمع أي بيانات شخصية.</span>
+            <span class="lang-tr">Belirlenen şarj seviyelerine ulaşıldığında sesli ve görsel uyarı.</span>
+            <span class="lang-en">Audio and visual alerts upon reaching specified charge thresholds.</span>
+            <span class="lang-ar">تنبيهات صوتية وبصرية عند الوصول إلى مستويات شحن محددة.</span>
           </p>
         </div>
       </div>

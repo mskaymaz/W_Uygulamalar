@@ -6,38 +6,13 @@
     <title>DeskPilot - Uygulama Detayı</title>
     <meta name="description" content="DeskPilot - Operasyonel hızı artıran, eklenti tabanlı modüler verimlilik asistanı.">
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter & Global Stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/global.css">
     
     <style>
-      /* Genel Ayarlar */
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: #fafafa;
-        font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        color: #333;
-      }
-      
-      .layout-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 25px;
-        max-width: 1300px;
-        margin: 0 auto;
-      }
-
-      .portfolio-container {
-        max-width: 900px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 40px 20px 60px 20px;
-        box-sizing: border-box;
-      }
-      
       /* Üst Navigasyon */
       .top-nav {
         display: flex;
@@ -66,35 +41,6 @@
         background: #f5f7fa;
         color: #1a1a1a;
         transform: translateX(-3px);
-      }
-
-      .lang-switcher {
-        display: flex;
-        gap: 15px;
-      }
-      
-      .lang-switcher button {
-        background: #fff;
-        border: 1px solid #ddd;
-        padding: 4px 10px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-family: inherit;
-        font-weight: 600;
-        font-size: 1.05rem;
-        transition: all 0.2s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      
-      .lang-switcher button:hover {
-        background: #f5f7fa;
-        transform: translateY(-1px);
-        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.15);
-        border-color: #ccc;
       }
 
       /* Uygulama Hero Kartı */
@@ -182,7 +128,6 @@
         margin-bottom: 30px;
       }
 
-      /* Öne Çıkan Özellikler */
       .features-title {
         font-size: 1.25rem;
         font-weight: 700;
@@ -219,7 +164,6 @@
         line-height: 1.45;
       }
 
-      /* İndirme / Durum Butonu */
       .action-btn-container {
         text-align: center;
         padding-top: 10px;
@@ -238,56 +182,7 @@
         font-size: 1rem;
       }
 
-      /* Reklam Alanları */
-      .desktop-ad {
-        width: 160px;
-        margin-top: 60px;
-        position: sticky;
-        top: 20px;
-        flex-shrink: 0;
-      }
-
-      .ad-placeholder {
-        background: #f4f5f7;
-        border: 1px dashed #cccccc;
-        border-radius: 8px;
-        color: #888888;
-        font-size: 0.85rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 10px;
-        box-sizing: border-box;
-      }
-
-      .desktop-ad .ad-placeholder {
-        height: 600px;
-      }
-
-      .infeed-ad-container {
-        margin: 30px 0 10px 0;
-        width: 100%;
-      }
-
-      .infeed-ad-container .ad-placeholder {
-        height: 120px;
-      }
-
-      /* Multi-Language CSS */
-      body.lang-tr .lang-en, body.lang-tr .lang-ar { display: none; }
-      body.lang-en .lang-tr, body.lang-en .lang-ar { display: none; }
-      body.lang-ar .lang-tr, body.lang-ar .lang-en { display: none; }
-      
-      body.lang-ar { direction: rtl; }
-
-      /* Responsive Media Queries */
-      @media (max-width: 1280px) {
-        .desktop-ad { display: none; }
-      }
-
       @media (max-width: 600px) {
-        .portfolio-container { padding: 20px 12px 40px 12px; }
         .detail-card { padding: 24px 16px; }
         .app-header { gap: 16px; }
         .app-big-icon { width: 60px; height: 60px; font-size: 32px; border-radius: 14px; }
@@ -359,7 +254,7 @@
           <p>
             <span class="lang-tr">İhtiyacınıza göre şekillenen genişletilebilir eklenti mimarisi.</span>
             <span class="lang-en">Expandable plugin architecture shaped according to your needs.</span>
-            <span class="lang-ar">بنية مكونات إضافية قابلة للتوسيع مشكلة وفقاً لاحتياجاتك.</span>
+            <span class="lang-ar">بنية مكونات إضافية قابلة للتوسيع مشكلة وفقاً لااحتياجاتك.</span>
           </p>
         </div>
 

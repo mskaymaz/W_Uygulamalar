@@ -1,0 +1,277 @@
+/* ======================================================
+   MSK LABS - GLOBAL DESIGN SYSTEM & STYLESHEET
+   ====================================================== */
+
+/* Genel Ayarlar */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.layout-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.portfolio-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px 60px 20px;
+  box-sizing: border-box;
+}
+
+/* Logo Ayarları */
+.logo-container {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.main-logo {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+}
+
+/* Sayfa Ana Başlığı */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #1a1a1a;
+}
+
+/* Kategori Başlıkları */
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 40px 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.category-title:first-of-type {
+  margin-top: 0;
+}
+
+/* 3'lü Grid Sistemi (Masaüstü & Tablet) */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Uygulama Kartı Tasarımı */
+.app-card {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.app-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+  border-color: #e0e0e0;
+}
+
+/* İkon ve Metin Stilleri */
+.app-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #f5f7fa;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.app-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.app-card:hover .app-icon {
+  background-color: #eef2f6;
+}
+
+.app-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.app-vision {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Çoklu Dil Ayarları */
+body.lang-tr .lang-en, body.lang-tr .lang-ar { display: none; }
+body.lang-en .lang-tr, body.lang-en .lang-ar { display: none; }
+body.lang-ar .lang-tr, body.lang-ar .lang-en { display: none; }
+
+body.lang-ar { direction: rtl; }
+
+.lang-switcher {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.lang-switcher button {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lang-switcher button:hover {
+  background: #f5f7fa;
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.15);
+  border-color: #ccc;
+}
+
+/* Reklam Alanları */
+.desktop-ad {
+  width: 160px;
+  margin-top: 60px;
+  position: sticky;
+  top: 20px;
+  flex-shrink: 0;
+}
+
+.ad-placeholder {
+  background: #f4f5f7;
+  border: 1px dashed #cccccc;
+  border-radius: 8px;
+  color: #888888;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.desktop-ad .ad-placeholder {
+  height: 600px;
+}
+
+.infeed-ad-container {
+  margin: 45px 0 25px 0;
+  width: 100%;
+}
+
+.infeed-ad-container .ad-placeholder {
+  height: 120px;
+}
+
+/* Mobil Telefon Duyarlılığı (2'li Yan Yana Düzlem) */
+@media (max-width: 1280px) {
+  .desktop-ad {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-container {
+    padding: 25px 12px;
+  }
+
+  .logo-container {
+    margin-bottom: 35px;
+  }
+
+  .main-logo {
+    width: 210px;
+  }
+
+  .page-title {
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+  }
+
+  .category-title {
+    font-size: 1.2rem;
+    margin: 25px 0 15px 0;
+  }
+
+  .app-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .app-card {
+    padding: 14px 12px;
+    border-radius: 10px;
+  }
+
+  .app-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
+  .app-name {
+    font-size: 0.95rem;
+    margin: 0 0 6px 0;
+  }
+
+  .app-vision {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .lang-switcher {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .lang-switcher button {
+    padding: 3px 8px;
+    font-size: 0.9rem;
+  }
+
+  .infeed-ad-container .ad-placeholder {
+    height: 100px;
+  }
+}
