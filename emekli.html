@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emekli - Uygulama Detayı</title>
+    <meta name="description" content="Emekli - Emekli olmaya ne kadar kaldığını anlık olarak hesaplayan ve takip eden masaüstü sayaç uygulaması.">
+    
+    <!-- Google Fonts: Inter & Global Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/global.css?v=9">
+    
+    <style>
+      /* Üst Navigasyon */
+      .top-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #555;
+        font-weight: 600;
+        font-size: 0.95rem;
+        background: #fff;
+        padding: 8px 16px;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+        transition: all 0.2s ease;
+      }
+
+      .back-btn:hover {
+        background: #f5f7fa;
+        color: #1a1a1a;
+        transform: translateX(-3px);
+      }
+
+      /* Uygulama Hero Kartı */
+      .detail-card {
+        background: #ffffff;
+        border: 1px solid #f0f0f0;
+        border-radius: 16px;
+        padding: 35px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        margin-bottom: 30px;
+      }
+
+      .app-header {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 25px;
+      }
+
+      .app-title-group h1 {
+        font-size: 2rem;
+        color: #1a1a1a;
+        margin: 0 0 10px 0;
+      }
+
+      .badges {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .badge {
+        font-size: 0.85rem;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+
+      .badge-platform {
+        background: #eef2ff;
+        color: #4f46e5;
+      }
+
+      .badge-status {
+        background: #fef3c7;
+        color: #d97706;
+      }
+
+      .app-description {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #4a5568;
+        margin-bottom: 30px;
+        border-left: 4px solid #4f46e5;
+        padding-left: 15px;
+      }
+
+      /* Özellikler Izgarası */
+      .features-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 20px;
+
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-bottom: 35px;
+      }
+
+      .feature-box {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+      }
+
+      .feature-box h4 {
+        margin: 0 0 8px 0;
+        font-size: 1.05rem;
+        color: #1e293b;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .feature-box p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #64748b;
+        line-height: 1.5;
+      }
+
+      /* Dil Seçici Butonları */
+      .lang-switch {
+        display: flex;
+        gap: 8px;
+        background: #edf2f7;
+        padding: 4px;
+        border-radius: 8px;
+      }
+
+      .lang-btn {
+        border: none;
+        background: transparent;
+        padding: 6px 12px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        color: #4a5568;
+        transition: all 0.2s;
+      }
+
+      .lang-btn.active {
+        background: #ffffff;
+        color: #4f46e5;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+
+      /* Çoklu Dil Gösterim Gizleme Kuralları */
+      body.lang-tr-active .lang-en,
+      body.lang-tr-active .lang-ar {
+        display: none !important;
+      }
+
+      body.lang-en-active .lang-tr,
+      body.lang-en-active .lang-ar {
+        display: none !important;
+      }
+
+      body.lang-ar-active .lang-tr,
+      body.lang-ar-active .lang-en {
+        display: none !important;
+      }
+
+      body.lang-ar-active {
+        direction: rtl;
+        text-align: right;
+      }
+
+      body.lang-ar-active .detail-card,
+      body.lang-ar-active .feature-box {
+        text-align: right;
+      }
+
+      body.lang-ar-active .app-description {
+        border-left: none;
+        border-right: 4px solid #4f46e5;
+        padding-left: 0;
+        padding-right: 15px;
+      }
+
+      /* Laboratuvar Talep Butonu */
+      .lab-request-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #fff;
+        border: 1px dashed #cbd5e1;
+        color: #475569;
+        font-size: 0.82rem;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: all 0.2s;
+        margin-top: 6px;
+      }
+
+      .lab-request-btn:hover {
+        background: #f8fafc;
+        border-color: #94a3b8;
+        color: #0f172a;
+      }
+    </style>
+</head>
+<body class="lang-tr-active">
+
+<div class="main-layout">
+  
+  <!-- Masaüstü Sol Reklam -->
+  <aside class="desktop-ad desktop-ad-left">
+    <div class="ad-placeholder">Masaüstü Sol Reklam<br>(160x600)</div>
+  </aside>
+
+  <div class="portfolio-container">
+    
+    <!-- Sayfa Üstü Mobil/Akış Reklam Alanı -->
+    <div class="infeed-ad-container">
+      <div class="ad-placeholder">Sayfa Üstü Reklam Alanı (Top Banner)</div>
+    </div>
+
+    <!-- Üst Navigasyon (Geri Dön & Dil Seçeneği) -->
+    <div class="top-nav">
+      <a href="index.html" class="back-btn">
+        <span class="lang-tr">← Tüm Uygulamalara Dön</span>
+        <span class="lang-en">← Back to All Apps</span>
+        <span class="lang-ar">← العودة إلى جميع التطبيقات</span>
+      </a>
+
+      <!-- Dil Seçici -->
+      <div class="lang-switch">
+        <button class="lang-btn active" onclick="switchLanguage('tr')">TR</button>
+        <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="switchLanguage('ar')">AR</button>
+      </div>
+    </div>
+
+    <!-- Uygulama Detay Kartı -->
+    <div class="detail-card">
+      <div class="app-header">
+        <div class="app-big-icon"><img src="media/emekli/icon.png" alt="Emekli"></div>
+        <div class="app-title-group">
+          <h1>Emekli</h1>
+          <div class="badges">
+            <span class="badge badge-platform">💻 Masaüstü Sistem</span>
+            <span class="badge badge-status">🛠️ Geliştirme Devam Ediyor</span>
+          </div>
+          <a href="#download-section" class="hero-download-btn">
+            <span class="lang-tr">🚀 Uygulamayı Edin / İndir</span>
+            <span class="lang-en">🚀 Get App / Download</span>
+            <span class="lang-ar">🚀 الحصول على التطبيق / تنزيل</span>
+          </a>
+        </div>
+
+        <!-- Sağ Taraf: Global Dil Durumu & Laboratuvar Talep Butonları -->
+        <div class="app-header-right">
+          <div class="global-status-panel">
+            <span class="lang-tr">🌐 Dil Durumu: <strong class="status-tag active">TR (Aktif)</strong></span>
+            <span class="lang-en">🌐 Language Status: <strong class="status-tag active">TR (Active)</strong></span>
+            <span class="lang-ar">🌐 حالة اللغة: <strong class="status-tag active">TR (نشط)</strong></span>
+          </div>
+          <a href="#" class="lab-request-btn contact-email-link lang-en" data-subject="[EN Version Request] Emekli" data-body="Hello MSK Labs Team, I would like to request the English (EN) version of Emekli. Thank you!">
+            📩 Request EN Version from Lab
+          </a>
+          <small class="email-note lang-en">Or send email to: <strong class="contact-email-text">msklabs.org@gmail.com</strong></small>
+
+          <a href="#" class="lab-request-btn contact-email-link lang-ar" data-subject="[AR Version Request] Emekli" data-body="Hello MSK Labs Team, I would like to request the Arabic version of Emekli. Thank you!">
+            📩 طلب إصدار اللغة العربية من المختبر
+          </a>
+          <small class="email-note lang-ar">أو أرسل بريداً إلى: <strong class="contact-email-text">msklabs.org@gmail.com</strong></small>
+        </div>
+      </div>
+
+      <div class="app-description">
+        <span class="lang-tr">Emekli olmaya ne kadar kaldığını anlık olarak hesaplayan, zaman yönetimini kolaylaştıran ve masaüstünüzde şık bir sayaç olarak takip etmenizi sağlayan verimlilik uygulaması.</span>
+        <span class="lang-en">Smart productivity desktop application that instantly calculates remaining time until retirement, simplifies time management, and tracks progress via a sleek widget.</span>
+        <span class="lang-ar">تطبيق الإنتاجية لسطح المكتب الذي يحسب الوقت المتبقي حتى التقاعد بشكل فوري، ويسهل إدارة الوقت ويتبع التقدم عبر ويدجت أنيق.</span>
+      </div>
+
+      <div class="features-title">
+        <span class="lang-tr">Öne Çıkan Özellikler</span>
+        <span class="lang-en">Key Features</span>
+        <span class="lang-ar">الميزات الرئيسية</span>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <h4>⏳ 
+            <span class="lang-tr">Hassas Sayım</span>
+            <span class="lang-en">Accurate Counter</span>
+            <span class="lang-ar">عداد دقيق</span>
+          </h4>
+          <p>
+            <span class="lang-tr">Yıl, ay, gün, saat ve saniye bazında canlı emeklilik hesaplaması.</span>
+            <span class="lang-en">Live retirement countdown by year, month, day, hour, and second.</span>
+            <span class="lang-ar">عد تنازلي مباشر للتقاعد حسب السنة والشهر واليوم والساعة والثانية.</span>
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h4>🖥️ 
+            <span class="lang-tr">Masaüstü Araç Çubuğu</span>
+            <span class="lang-en">Desktop Widget</span>
+            <span class="lang-ar">ويدجت سطح المكتب</span>
+          </h4>
+          <p>
+            <span class="lang-tr">Windows başlangıcı ve sistem tepsisi (System Tray) entegrasyonu.</span>
+            <span class="lang-en">Seamless Windows startup and system tray integration.</span>
+            <span class="lang-ar">بدء تشغيل Windows وتكامل شريط النظام بشكل سلس.</span>
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h4>🎨 
+            <span class="lang-tr">Kişiselleştirilebilir Tema</span>
+            <span class="lang-en">Customizable Theme</span>
+            <span class="lang-ar">مظهر قابل للتخصيص</span>
+          </h4>
+          <p>
+            <span class="lang-tr">Sayaç görünümü, font stilleri ve renk özelleştirme seçenekleri.</span>
+            <span class="lang-en">Customizable counter view, font styles, and color palettes.</span>
+            <span class="lang-ar">خيارات تخصيص عرض العداد وأنماط الخطوط وألوان المظهر.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- İndirme ve Yayın Kanalları Alanı -->
+      <div id="download-section" class="download-section">
+        <div class="download-section-title">
+          <span class="lang-tr">📥 İndirme Seçenekleri ve Yayın Kanalları</span>
+          <span class="lang-en">📥 Download Options & Release Channels</span>
+          <span class="lang-ar">📥 خيارات التنزيل وقنوات الإصدار</span>
+        </div>
+
+        <div class="download-grid">
+          <!-- GitHub Releases (Pasif) -->
+          <div class="download-card disabled">
+            <div class="download-card-header">
+              <div class="download-card-icon">
+                <img src="assets/img/store/github.png" alt="GitHub" class="store-brand-icon">
+              </div>
+              <div class="download-card-title">GitHub</div>
+            </div>
+            <div class="download-card-status">
+              <span class="lang-tr">Yakında Kullanılabilir Olacaksınız</span>
+              <span class="lang-en">Will be available soon</span>
+              <span class="lang-ar">ستكون متاحة قريباً</span>
+            </div>
+            <span class="download-tag tag-soon">
+              <span class="lang-tr">🛠️ Hazırlanıyor</span>
+              <span class="lang-en">🛠️ In Progress</span>
+              <span class="lang-ar">🛠️ قيد التحضير</span>
+            </span>
+          </div>
+
+          <!-- Google Drive İndirme Bağlantısı (Pasif) -->
+          <div class="download-card disabled">
+            <div class="download-card-header">
+              <div class="download-card-icon">
+                <img src="assets/img/store/google-drive.png" alt="Google Drive" class="store-brand-icon">
+              </div>
+              <div class="download-card-title">Google Drive</div>
+            </div>
+            <div class="download-card-status">
+              <span class="lang-tr">Yakında Kullanılabilir Olacaksınız</span>
+              <span class="lang-en">Will be available soon</span>
+              <span class="lang-ar">ستكون متاحة قريباً</span>
+            </div>
+            <span class="download-tag tag-soon">
+              <span class="lang-tr">🛠️ Hazırlanıyor</span>
+              <span class="lang-en">🛠️ In Progress</span>
+              <span class="lang-ar">🛠️ قيد التحضير</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sayfa Altı Reklam Alanı -->
+    <div class="infeed-ad-container">
+      <div class="ad-placeholder">Sayfa Altı Reklam Alanı (Bottom Banner)</div>
+    </div>
+
+  </div> <!-- .portfolio-container Bitişi -->
+
+  <!-- Masaüstü Sağ Reklam -->
+  <aside class="desktop-ad desktop-ad-right">
+    <div class="ad-placeholder">Masaüstü Sağ Reklam<br>(160x600)</div>
+  </aside>
+
+</div>
+
+<script>
+  // MERKEZİ SİTE KONFİGÜRASYONU (Blogger & HTML Uyumlu)
+  var SITE_CONFIG = {
+    contactEmail: "msklabs.org@gmail.com"
+  };
+
+  // E-posta adreslerini ve mailto bağlantılarını merkezi konfigürasyondan doldurur
+  function syncCentralConfig() {
+    var email = (window.SITE_CONFIG && window.SITE_CONFIG.contactEmail) ? window.SITE_CONFIG.contactEmail : "msklabs.org@gmail.com";
+    
+    document.querySelectorAll('.contact-email-text').forEach(function(el) {
+      el.textContent = email;
+    });
+
+    document.querySelectorAll('.contact-email-link').forEach(function(el) {
+      var subject = el.getAttribute('data-subject') || 'Laboratuvar Sürüm Talebi';
+      var body = el.getAttribute('data-body') || 'Merhaba MSK Labs Ekibi,';
+      el.href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  }
+
+  // Dil Değiştirme Fonksiyonu
+  function switchLanguage(lang) {
+    document.body.classList.remove('lang-tr-active', 'lang-en-active', 'lang-ar-active');
+    document.body.classList.add('lang-' + lang + '-active');
+    
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    
+    const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(
+      btn => btn.textContent.toLowerCase() === lang
+    );
+    if (activeBtn) activeBtn.classList.add('active');
+  }
+
+  document.addEventListener('DOMContentLoaded', syncCentralConfig);
+</script>
+
+</body>
+</html>
