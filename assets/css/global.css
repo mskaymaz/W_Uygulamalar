@@ -204,13 +204,19 @@ body.lang-ar { direction: rtl; }
   box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.25);
 }
 
-/* Arapça Buton Kaligrafi İkonu (ElArabiye.svg) */
+/* Arapça Buton Kaligrafi İkonu (ElArabiye.svg - Metinsiz Büyük Görünüm) */
+.lang-switcher button.lang-btn-arabic {
+  padding: 3px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .arabic-btn-icon {
-  height: 22px;
+  height: 26px;
   width: auto;
-  max-height: 24px;
-  display: inline-block;
-  vertical-align: middle;
+  max-height: 28px;
+  display: block;
   transition: filter 0.2s ease;
 }
 
