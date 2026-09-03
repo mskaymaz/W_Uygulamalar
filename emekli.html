@@ -145,40 +145,59 @@
         color: #4b5563;
         font-weight: 600;
         padding: 14px 28px;
-        border-radius: 30px;
+        border-radius: 10px;
+        border: 1px dashed #d1d5db;
         font-size: 1rem;
+      }
+
+      @media (max-width: 600px) {
+        .detail-card { padding: 24px 16px; }
+        .app-header { gap: 16px; }
+        .app-big-icon { width: 60px; height: 60px; font-size: 32px; border-radius: 14px; }
+        .app-title-group h1 { font-size: 1.5rem; }
+        .app-description { font-size: 0.95rem; }
+        .features-grid { grid-template-columns: 1fr; }
       }
     </style>
 </head>
 <body class="lang-tr">
 
-<div class="main-layout">
-  
-  <!-- Masaüstü Sol Reklam (1280px üzerinde görünür) -->
+<div class="layout-wrapper">
+
+  <!-- Masaüstü Sol Reklam -->
   <aside class="desktop-ad desktop-ad-left">
     <div class="ad-placeholder">Masaüstü Sol Reklam<br>(160x600)</div>
   </aside>
 
+  <!-- Ana Detay İçeriği -->
   <div class="portfolio-container">
     
-    <!-- Sayfa Üstü Mobil/Akış Reklam Alanı -->
-    <div class="infeed-ad-container">
-      <div class="ad-placeholder">Sayfa Üstü Reklam Alanı (Top Banner)</div>
-    </div>
-
-    <!-- Üst Navigasyon (Geri Dön & Dil Seçeneği) -->
+    <!-- Üst Bar: Geri Dönüş ve Dil Seçici -->
     <div class="top-nav">
       <a href="index.html" class="back-btn">
-        <span class="lang-tr">← Tüm Uygulamalara Dön</span>
-        <span class="lang-en">← Back to All Apps</span>
-        <span class="lang-ar">← العودة إلى جميع التطبيقات</span>
+        <span class="lang-tr">← Portföye Dön</span>
+        <span class="lang-en">← Back to Portfolio</span>
+        <span class="lang-ar">العودة إلى المحفظة ←</span>
       </a>
 
-      <!-- Sağ Üst Dil Seçici -->
       <div class="lang-switcher">
-        <button onclick="setLang('tr')" data-lang="tr" class="active">🇹🇷 TR</button>
-        <button onclick="setLang('en')" data-lang="en">🇬🇧 EN</button>
-        <button onclick="setLang('ar')" data-lang="ar">🇸🇦 عرب</button>
+        <button onclick="setLang('tr')" data-lang="tr" title="Türkçe">TR</button>
+        <button onclick="setLang('en')" data-lang="en" title="English">EN</button>
+        <button onclick="setLang('ar')" data-lang="ar" title="العربية">عرب</button>
+      </div>
+    </div>
+
+    <!-- Dil Destek Uyarısı & Çeviri Talebi Kutusu (Sadece EN ve AR dillerinde görünür) -->
+    <div class="translation-request-box lang-en lang-ar">
+      <div class="request-content">
+        <div class="request-text">
+          <span class="lang-en">ℹ️ This application currently supports <strong>Turkish</strong>. Would you like to request English translation?</span>
+          <span class="lang-ar">ℹ️ هذا التطبيق يدعم حالياً اللغة <strong>التركية</strong>. هل ترغب في طلب الترجمة إلى العربية؟</span>
+        </div>
+        <a href="#" class="request-btn contact-email-link" data-subject="[Translation Request] Emekli" data-body="Hello MSK Labs Team, I would like to request the Emekli application to be translated to my language. Thank you!">
+          <span class="lang-en">📩 Request Translation</span>
+          <span class="lang-ar">📩 طلب الترجمة</span>
+        </a>
       </div>
     </div>
 
@@ -335,7 +354,7 @@
     <div class="ad-placeholder">Masaüstü Sağ Reklam<br>(160x600)</div>
   </aside>
 
-</div>
+</div> <!-- .layout-wrapper Bitişi -->
 
 <script>
   // MERKEZİ SİTE KONFİGÜRASYONU (Blogger & HTML Uyumlu)
