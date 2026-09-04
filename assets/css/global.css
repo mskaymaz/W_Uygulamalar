@@ -1,4 +1,4 @@
-/* ======================================================
+ï»¿/* ======================================================
    MSK LABS - GLOBAL DESIGN SYSTEM & STYLESHEET
    ====================================================== */
 
@@ -213,9 +213,9 @@ body.lang-ar { direction: rtl; }
 }
 
 .arabic-btn-icon {
-  height: 26px;
-  width: auto;
-  max-height: 28px;
+  height: 28px;
+    width: auto;
+    max-height: 32px;
   display: block;
   transition: filter 0.2s ease;
 }
@@ -651,7 +651,7 @@ body.lang-ar { direction: rtl; }
 }
 
 /* ==========================================================================
-   FOOTER & DOKÜMANTASYON SAYFALARI (Hakkýmýzda, Gizlilik, SSS)
+   FOOTER & DOKï¿½MANTASYON SAYFALARI (Hakkï¿½mï¿½zda, Gizlilik, SSS)
    ========================================================================== */
 .site-footer {
   margin-top: 50px;
