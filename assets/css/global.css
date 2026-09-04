@@ -750,3 +750,27 @@ body.lang-ar .static-page-card ul {
   color: #94a3b8;
   font-size: 0.95rem;
 }
+
+/* Arapça Kart Rozeti (ElArabiye.svg Standart Görünüm) */
+.lang-badge.lang-badge-arabic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+}
+
+.arabic-badge-icon {
+  height: 14px;
+  width: auto;
+  display: block;
+  transition: filter 0.2s ease;
+}
+
+.lang-badge.active .arabic-badge-icon {
+  filter: none;
+}
+
+.lang-badge.pending .arabic-badge-icon {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
